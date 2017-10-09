@@ -181,10 +181,12 @@ function uptime() {
 				} else {
 				    var loadstr = ""
 					loadstr += result.servers[i].load_1.toFixed(2);
-					loadstr += " | "
+					loadstr += "<span id=\"load_5\">&nbsp;| "
 					loadstr += result.servers[i].load_5.toFixed(2);	
-					loadstr += " | "
+					loadstr += "</span>"
+					loadstr += "<span id=\"load_15\">&nbsp;| "
 					loadstr += result.servers[i].load_15.toFixed(2);
+					loadstr += "</span>"
 					TableRow.children["load"].innerHTML = loadstr
 				}
 
