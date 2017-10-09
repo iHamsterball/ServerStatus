@@ -54,17 +54,17 @@ def get_load_1():
         try:
                 return os.getloadavg()[0]
         except:
-                return -1
+                return -1.0
 def get_load_5():
         try:
                 return os.getloadavg()[1]
         except:
-                return -1
+                return -1.0
 def get_load_15():
         try:
                 return os.getloadavg()[2]
         except:
-                return -1
+                return -1.0
 
 def get_cpu():
 	return psutil.cpu_percent(interval=INTERVAL)
