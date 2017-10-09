@@ -181,14 +181,10 @@ function uptime() {
 				} else {
 				    var loadstr = ""
 					loadstr += result.servers[i].load_1.toFixed(2);
-					if (window.innerWidth > 1920) {
-						loadstr += " | "
-						loadstr += result.servers[i].load_5.toFixed(2);
-					}
-					if (window.innerWidth > 2160) {
-						loadstr += " | "
-						loadstr += result.servers[i].load_15.toFixed(2);
-					}
+					loadstr += " | "
+					loadstr += result.servers[i].load_5.toFixed(2);	
+					loadstr += " | "
+					loadstr += result.servers[i].load_15.toFixed(2);
 					TableRow.children["load"].innerHTML = loadstr
 				}
 
