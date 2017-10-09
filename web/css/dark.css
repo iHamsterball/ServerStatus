@@ -1,6 +1,6 @@
 body { background: #222 url('../img/dark.png'); color: #fff; }
 .navbar { min-height: 40px; }
-.navbar-brand { color: #FFF !important; padding: 10px; font-size: 20px; }
+.navbar-brand { color: #FFF !important; padding: 10px; font-family: 'Noto Sans SC Sliced'; font-size: 20px; }
 .dropdown .dropdown-toggle { padding-bottom: 10px; padding-top: 10px; }
 .dropdown-menu > li > a { color: #FFF !important; background-color: #222222 !important; }
 .dropdown-menu > li > a:hover { color: #FFF !important; background: #000 !important; }
