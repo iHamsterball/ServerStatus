@@ -51,11 +51,20 @@ def get_hdd():
 	return int(size/1024.0/1024.0), int(used/1024.0/1024.0)
 
 def get_load_1():
-	return os.getloadavg()[0]
+        try:
+                return os.getloadavg()[0]
+        except:
+                return -1
 def get_load_5():
-	return os.getloadavg()[1]
+        try:
+                return os.getloadavg()[1]
+        except:
+                return -1
 def get_load_15():
-	return os.getloadavg()[2]
+        try:
+                return os.getloadavg()[2]
+        except:
+                return -1
 
 def get_cpu():
 	return psutil.cpu_percent(interval=INTERVAL)
