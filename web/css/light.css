@@ -17,6 +17,10 @@ tr.odd.expandRow > :hover { background: #FFF !important; }
 #cpu, #ram, #hdd, #network, #traffic { min-width: 55px; max-width: 100px; }
 #traffic { max-width: 150px !important; }
 
+@media only screen and (max-width: 1200px) {
+	#load_15							{ display:none; }
+}
+
 @media only screen and (max-width: 992px) {
 	#host, tr td:nth-child(5)			{ display:none; visibility:hidden; }
 	#location, tr td:nth-child(6)		{ display:none; visibility:hidden; }
