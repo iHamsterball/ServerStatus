@@ -4,7 +4,7 @@ body { background: #ebebeb url('../img/light.png'); }
 .dropdown .dropdown-toggle { padding-bottom: 10px; padding-top: 10px; }
 .navbar-inverse .navbar-brand { color: #fff; padding: 10px; font-size: 20px; }
 .content { background: #ffffff; padding: 20px; border-radius: 5px; border: 1px #cecece solid; -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, .1); box-shadow: 0 1px 10px rgba(0, 0, 0, .1); margin-bottom: 20px; }
-.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; }
+.table { background: #ffffff; margin-bottom: 0; border-collapse: collapse; border-radius: 3px; font-family: 'Noto Sans SC Sliced'; font-size: inherit;}
 .table th, .table td { text-align: center; }
 .table-striped tbody > tr.even > td, .table-striped tbody > tr.even > th { background-color: #F9F9F9; }
 .table-striped tbody > tr.odd > td, .table-striped tbody > tr.odd > th { background-color: #FFF; }
