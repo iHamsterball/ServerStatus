@@ -1,9 +1,9 @@
 #!/bin/bash
 
-SERVER="status.botox.bz"
+SERVER="127.0.0.1"
 PORT=35601
-USER="s01"
-PASSWORD="some-hard-to-guess-copy-paste-password"
+USER="USER"
+PASSWORD="USER_PASSWORD"
 INTERVAL=1 # Update interval
 
 
@@ -77,7 +77,9 @@ while $RUNNING; do
 		Uptime=$(awk '{ print int($1) }' /proc/uptime)
 
 		# Load Average
-		Load=$(awk '{ print $1 }' /proc/loadavg)
+		Load1=$(awk '{ print $1 }' /proc/loadavg)
+		Load5=$(awk '{ print $2 }' /proc/loadavg)
+		Load15=$(awk '{ print $3 }' /proc/loadavg)
 
 		# Memory
 		MemTotal=$(awk '/MemTotal/ {print $2}' /proc/meminfo)
@@ -123,7 +125,7 @@ while $RUNNING; do
 		PREV_NetRx="$NetRx"
 		PREV_NetTx="$NetTx"
 
-		echo -e "update {$Online \"uptime\": $Uptime, \"load\": $Load, \"memory_total\": $MemTotal, \"memory_used\": $MemUsed, \"swap_total\": $SwapTotal, \"swap_used\": $SwapUsed, \"hdd_total\": $HDDTotal, \"hdd_used\": $HDDUsed, \"cpu\": ${DIFF_USAGE}.0, \"network_rx\": $SpeedRx, \"network_tx\": $SpeedTx, \"network_in\": $PREV_NetRx, \"network_out\": $PREV_NetTx }"
+		echo -e "update {$Online \"uptime\": $Uptime, \"load_1\": $Load1, \"load_5\": $Load5, \"load_15\": $Load15, \"memory_total\": $MemTotal, \"memory_used\": $MemUsed, \"swap_total\": $SwapTotal, \"swap_used\": $SwapUsed, \"hdd_total\": $HDDTotal, \"hdd_used\": $HDDUsed, \"cpu\": ${DIFF_USAGE}.0, \"network_rx\": $SpeedRx, \"network_tx\": $SpeedTx, \"network_in\": $PREV_NetRx, \"network_out\": $PREV_NetTx }"
 	done | $NETBIN $SERVER $PORT | while IFS= read -r -d $'\0' x; do
 		if [ ! -f /tmp/fuckbash ]; then
 			if grep -q "IPv6" <<< "$x"; then
