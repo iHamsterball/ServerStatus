@@ -113,7 +113,7 @@ while $RUNNING; do
 		PREV_IDLE="$IDLE"
 
 		# Network traffic
-		NET=($(grep ":" /proc/net/dev | grep -v -e "lo" -e "tun" | awk '{a+=$2}{b+=$10}END{print sprintf("%.0f",a),b}'))
+		NET=($(grep ":" /proc/net/dev | grep -v -e "lo" -e "tun" | awk '{a+=$2}{b+=$10}END{print sprintf("%.0f",a),sprintf("%.0f",b)}'))
 		NetRx="${NET[0]}"
 		NetTx="${NET[1]}"
 		if [ "$PREV_NetRx" == "" ]; then
